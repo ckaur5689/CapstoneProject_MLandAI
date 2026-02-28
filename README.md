@@ -14,6 +14,20 @@ A capstone project exploring the use of Bayesian Optimisation (BO) with Gaussian
   Evaluating a real-world objective function — whether it's a physical experiment, a simulation, or a hyperparameter tuning run — is often costly. Bayesian Optimisation offers a way to find good solutions with far fewer evaluations than grid search or random search by building a probabilistic model of the objective and using that model to decide where to look next.
   This project uses synthetic benchmarks to study the behaviour of the BO loop in a controlled setting, enabling direct comparison between the surrogate model's predictions and the true underlying function.
 
+## Weekly strategy
+   Following the initial data provided as descibed in the data_sheet, each student had a maximum of 13 submissions.
+   Each week we submitted ONE x input array for each of the 8 synthetic functions to the Capstone Project portal for Imperial Executive Education team to process and
+   email back the results of the correspnding y value. 
+   
+   The week to week process helped to build our understanding od each black-box function (using surrogate models) and to suggest the bext next candidate x values for the    
+   next week's submission, with the goal of identifying the global maximum of each function.
+ 
+         Weeks 1-2:  Submissions were largely based on manual reasoning (using scatter plots where feasible) or own insight to pick the next best point
+                     to either explore the space of the function in particular where the initial data provided showed a gap in observations in a particular region  
+         Weeks 3-6:  Bayesian optimisation using a GP and using UCB (kappa) as the acquisition function was largely used to pick the next best candidate predominately using                      a higher kappa for exploring the search space or a lower kappa for exploiting
+         Weeks 7-10: Where it appeared that the surrogate model was no longer learning or no real imprrovement to the objective function, other parameters controlling the ~
+                     BO intial set up such as N_INI and N_INTER were explored and hypperameters such as the learning rate and n_estimators were tuned accordingly. 
+   
 
 ## DATA
  [data_sheet](https://github.com/ckaur5689/CapstoneProject_MLandAI/blob/main/data_sheet.md)
