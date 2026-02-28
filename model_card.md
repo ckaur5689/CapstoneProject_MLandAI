@@ -36,14 +36,14 @@ where μ(x) is the posterior predictive mean, σ(x) is the posterior predictive 
  # 3. Model Configuration
 
  - 3.1 Kernel & Hyperparameters
-Each of the eight GP surrogate models was configured with a kernel and hyperparameter settings appropriate to the dimensionality and characteristics of the corresponding synthetic black-box function. Kernel hyperparameters (e.g., length-scale, output variance) were optimised by maximising the log marginal likelihood at each BO iteration to ensure the surrogate remained well-calibrated as observations accumulated.
+Each of the eight GP surrogate models was configured with a kernel and hyperparameter settings appropriate to the dimensionality and characteristics of the corresponding synthetic black-box function. Kernel hyperparameters (e.g., length-scale, output variance) were optimised by maximising the objective function at each BO iteration to ensure the surrogate remained well-calibrated as observations accumulated.
 
                                 -Configuration-              |      -Parameter Setting-
                                 GP Prior Mean                |       Zero mean function
-                                Kernel Type                  |       Radial Basis Function (RBF) / Matérn (per function)
+                                Kernel Type                  |       Matérn (per function)
                                 Hyperparameter Optimisation  |       Root Mean Square Error, Negative R^2 
                                 Observation Noise            |       Modelled (nugget / noise variance)
-                                UCB κ (kappa)                |       Tuned per function
+                                UCB κ (kappa)                |       Low kappa for exploitation, high k for exploration
                                 Initial Random Samples       |       Defined per experimental setup
                                 Total BO Iterations          |       Defined per experimental setup
 
@@ -101,25 +101,17 @@ Each surrogate model was initialised with a set of quasi-random initial observat
  - 4.2 Performance Metrics
 The following metrics were used to assess the quality and efficiency of each surrogate model and the overall BO procedure:
 
-                     -Metric-	                |    -Description -
-                     Best Observed Value        |   Highest objective function value f(x*) found during the BO run
-                     Convergence Iteration      |   Iteration at which the best observed value first came within a threshold of the global maximum
-                     GP Log Marginal Likelihood |	Measure of surrogate model fit quality at each iteration
-                     Residual plots             |   difference between y and predicted value across range of x 
+                     -Metric-	                       |   -Description -
+                     Best Observed Value             |    Highest objective function value f(x*) found during the BO run
+                     Convergence Iteration           |   Iteration at which the best observed value first came within a threshold of the global maximum
+                     Root Mean Square                |   Measure of surrogate model fit quality at each iteration for function 1,3-8
+                     Negative R^2                    |	 Measure of surrogate model fit quality at each iteration for function 2
+                     Residual plots                  |   Residuals vs Predicted Output plot for each function 
 
 - 4.3 Results Summary (To be done)
 The table below summarises the global maximum found by each surrogate model at the end of the Bayesian Optimisation procedure. Values to be updated with empirical results from your experiments.
 
-                -Model ID	True Global Max	Best Found Value	Simple Regret	Convergence Iter.
-                -M1	—	—	—	—
-                -M2	—	—	—	—
-                -M3	—	—	—	—
-                -M4	—	—	—	—
-                -M5	—	—	—	—
-                -M6	—	—	—	—
-                -M7	—	—	—	—
-                -M8	—	—	—	—
-          - Note: To Populate with empirical results from your experiments.
+             -Note: To Populate with empirical results from your experiments and final residual plots from final surrogate model.
 
 # 5. Limitations & Considerations
     •	Scalability: GP inference scales as O(n³) in the number of observations, which limits applicability to settings with large evaluation budgets. Sparse GP approximations or batched BO may be required in such cases.
