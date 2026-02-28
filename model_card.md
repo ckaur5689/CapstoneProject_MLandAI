@@ -37,14 +37,14 @@ where μ(x) is the posterior predictive mean, σ(x) is the posterior predictive 
  - 3.1 Kernel & Hyperparameters
 Each of the eight GP surrogate models was configured with a kernel and hyperparameter settings appropriate to the dimensionality and characteristics of the corresponding synthetic black-box function. Kernel hyperparameters (e.g., length-scale, output variance) were optimised by maximising the log marginal likelihood at each BO iteration to ensure the surrogate remained well-calibrated as observations accumulated.
 
-        #Configuration                        #Parameter Setting
-        GP Prior Mean                        Zero mean function
-        Kernel Type                          Radial Basis Function (RBF) / Matérn (per function)
-        Hyperparameter Optimisation          Root Mean Square Error, Negative R^2 
-        Observation Noise                    Modelled (nugget / noise variance)
-        UCB κ (kappa)                        Tuned per function
-        Initial Random Samples               Defined per experimental setup
-        Total BO Iterations                  Defined per experimental setup
+        -Configuration-              |      -Parameter Setting-
+        GP Prior Mean                |       Zero mean function
+        Kernel Type                  |       Radial Basis Function (RBF) / Matérn (per function)
+        Hyperparameter Optimisation  |       Root Mean Square Error, Negative R^2 
+        Observation Noise            |       Modelled (nugget / noise variance)
+        UCB κ (kappa)                |       Tuned per function
+        Initial Random Samples       |       Defined per experimental setup
+        Total BO Iterations          |       Defined per experimental setup
 
  - 3.2 Synthetic Black-Box Functions
 Eight synthetic benchmark functions were used as the black-box objectives. These functions are designed to test different challenges in global optimisation, including multimodality, varying curvature, and flat regions. A separate GP surrogate model was trained and optimised independently for each function.
@@ -100,33 +100,32 @@ Each surrogate model was initialised with a set of quasi-random initial observat
  - 4.2 Performance Metrics
 The following metrics were used to assess the quality and efficiency of each surrogate model and the overall BO procedure:
 
-Metric	Description
-Best Observed Value	Highest function value f(x*) found during the BO run
-Cumulative Regret	Sum of differences between the global maximum and best observed value at each iteration
-Simple Regret	Gap between the true global maximum and the best observed value at termination
-Convergence Iteration	Iteration at which the best observed value first came within a threshold of the global maximum
-GP Log Marginal Likelihood	Measure of surrogate model fit quality at each iteration
+                     -Metric-	                |    -Description -
+                     Best Observed Value        |   Highest objective function value f(x*) found during the BO run
+                     Convergence Iteration      |   Iteration at which the best observed value first came within a threshold of the global maximum
+                     GP Log Marginal Likelihood |	Measure of surrogate model fit quality at each iteration
+                     Residual plots             |   difference between y and predicted value across range of x 
 
-4.3 Results Summary
+- 4.3 Results Summary (To be done)
 The table below summarises the global maximum found by each surrogate model at the end of the Bayesian Optimisation procedure. Values should be updated with empirical results from your experiments.
 
-Model ID	True Global Max	Best Found Value	Simple Regret	Convergence Iter.
-M1	—	—	—	—
-M2	—	—	—	—
-M3	—	—	—	—
-M4	—	—	—	—
-M5	—	—	—	—
-M6	—	—	—	—
-M7	—	—	—	—
-M8	—	—	—	—
-Note: Populate with empirical results from your experiments.
+    -Model ID	True Global Max	Best Found Value	Simple Regret	Convergence Iter.
+    -M1	—	—	—	—
+    -M2	—	—	—	—
+    -M3	—	—	—	—
+    -M4	—	—	—	—
+    -M5	—	—	—	—
+    -M6	—	—	—	—
+    -M7	—	—	—	—
+    -M8	—	—	—	—
+ - Note: To Populate with empirical results from your experiments.
 
 # 5. Limitations & Considerations
-•	Scalability: GP inference scales as O(n³) in the number of observations, which limits applicability to settings with large evaluation budgets. Sparse GP approximations or batched BO may be required in such cases.
-•	Kernel Misspecification: The choice of kernel encodes prior assumptions about the smoothness of the objective function. A misspecified kernel can degrade surrogate quality and slow convergence.
-•	UCB κ Sensitivity: The exploration–exploitation trade-off governed by κ is sensitive to its value. Sub-optimal κ may lead to premature convergence (over-exploitation) or wasteful over-exploration.
-•	Synthetic Functions Only: Results are evaluated on synthetic benchmarks and may not generalise directly to real-world black-box optimisation tasks with noise, constraints, or high dimensionality.
-•	Local Acquisition Optimisation: The UCB acquisition function was maximised using a gradient-based or grid-based inner optimiser, which may find only a local maximum of UCB rather than the global one.
+    •	Scalability: GP inference scales as O(n³) in the number of observations, which limits applicability to settings with large evaluation budgets. Sparse GP approximations or batched BO may be required in such cases.
+    •	Kernel Misspecification: The choice of kernel encodes prior assumptions about the smoothness of the objective function. A misspecified kernel can degrade surrogate quality and slow convergence.
+    •	UCB κ Sensitivity: The exploration–exploitation trade-off governed by κ is sensitive to its value. Sub-optimal κ may lead to premature convergence (over-exploitation) or wasteful over-exploration.
+    •	Synthetic Functions Only: Results are evaluated on synthetic benchmarks and may not generalise directly to real-world black-box optimisation tasks with noise, constraints, or high dimensionality.
+    •	Local Acquisition Optimisation: The UCB acquisition function was maximised using a gradient-based or grid-based inner optimiser, which may find only a local maximum of UCB rather than the global one.
 
 # 6. Intended Use
 These surrogate models are intended for academic and research use within the scope of the capstone project. The primary purpose is to demonstrate the application of Bayesian Optimisation with Gaussian Process surrogates and the UCB acquisition function to efficiently locate the global maximum of unknown functions with a limited evaluation budget. The models are not intended for production deployment or use on safety-critical systems.
