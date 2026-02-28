@@ -19,7 +19,7 @@ This project uses synthetic benchmarks to study the behaviour of the BO loop in 
   Datasheet.md
 
 ## MODEL 
-   ./model_card.md
+ [model_card]([relative/path/to/file.md](https://github.com/ckaur5689/CapstoneProject_MLandAI/blob/main/model_card.md))
  
 
 ## KEY CONCEPTS
