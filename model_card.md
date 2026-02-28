@@ -37,14 +37,14 @@ where μ(x) is the posterior predictive mean, σ(x) is the posterior predictive 
  - 3.1 Kernel & Hyperparameters
 Each of the eight GP surrogate models was configured with a kernel and hyperparameter settings appropriate to the dimensionality and characteristics of the corresponding synthetic black-box function. Kernel hyperparameters (e.g., length-scale, output variance) were optimised by maximising the log marginal likelihood at each BO iteration to ensure the surrogate remained well-calibrated as observations accumulated.
 
-  -- Configuration                     Parameter Setting
-   - GP Prior Mean	                   Zero mean function
-   --Kernel Type	                   Radial Basis Function (RBF) / Matérn (per function)
-   --Hyperparameter Optimisation	   Root Mean Square Error, Negative R^2 
-   --Observation Noise	               Modelled (nugget / noise variance)
-   --UCB κ (kappa)	                   Tuned per function
-   --Initial Random Samples	           Defined per experimental setup
-   --Total BO Iterations	           Defined per experimental setup
+        Configuration                     Parameter Setting
+        GP Prior Mean	                   Zero mean function
+        Kernel Type	                       Radial Basis Function (RBF) / Matérn (per function)
+        Hyperparameter Optimisation	       Root Mean Square Error, Negative R^2 
+        Observation Noise	               Modelled (nugget / noise variance)
+        UCB κ (kappa)	                   Tuned per function
+        Initial Random Samples	           Defined per experimental setup
+        Total BO Iterations	               Defined per experimental setup
 
  - 3.2 Synthetic Black-Box Functions
 Eight synthetic benchmark functions were used as the black-box objectives. These functions are designed to test different challenges in global optimisation, including multimodality, varying curvature, and flat regions. A separate GP surrogate model was trained and optimised independently for each function.
