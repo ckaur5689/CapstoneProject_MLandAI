@@ -16,7 +16,7 @@ This project uses synthetic benchmarks to study the behaviour of the BO loop in 
 
 
 ## DATA
-  Datasheet.md
+ [data_sheet](https://github.com/ckaur5689/CapstoneProject_MLandAI/blob/main/data_sheet.md)
 
 ## MODEL 
  [model_card](https://github.com/ckaur5689/CapstoneProject_MLandAI/blob/main/model_card.md)
