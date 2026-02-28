@@ -23,7 +23,8 @@ This project uses synthetic benchmarks to study the behaviour of the BO loop in 
 
 ## HYPERPARAMETER OPTIMSATION
 
-  -Key Concepts-
+    -Key Concepts-
+  
     Gaussian Process — A non-parametric probabilistic model that places a distribution over functions. Given observations, the GP posterior provides a mean prediction and       uncertainty estimate at every point in the input space.
   
     Upper Confidence Bound (UCB) — An acquisition function that scores candidate points by their predicted mean plus a scaled uncertainty term. The scaling factor κ\kappa
@@ -31,8 +32,8 @@ This project uses synthetic benchmarks to study the behaviour of the BO loop in 
 
     Surrogate Model — An inexpensive-to-evaluate approximation of the true objective function, updated sequentially as new observations are collected.
   
-  - Description of which hyperparameters you have and how you chose to optimise them 
-    Hyperparameters tuned were largely learning rate, n_estimators, etc. (to be completed more fully in final write up)
+   - Description of which hyperparameters you have and how you chose to optimise them 
+     Hyperparameters tuned were largely learning rate, n_estimators, etc. (to be completed more fully in final write up)
 
 ## RESULTS (To be completed in final write up)
 A summary of your results and what you can learn from your model 
