@@ -21,10 +21,8 @@ This project uses synthetic benchmarks to study the behaviour of the BO loop in 
 ## MODEL 
  See model_card.md
 
-## HYPERPARAMETER OPTIMSATION
-
-    -Key Concepts-
-  
+## KEY CONCEPTS
+ 
     Gaussian Process — A non-parametric probabilistic model that places a distribution over functions. Given observations, the GP posterior provides a mean prediction and       uncertainty estimate at every point in the input space.
   
     Upper Confidence Bound (UCB) — An acquisition function that scores candidate points by their predicted mean plus a scaled uncertainty term. The scaling factor κ\kappa
@@ -32,8 +30,25 @@ This project uses synthetic benchmarks to study the behaviour of the BO loop in 
 
     Surrogate Model — An inexpensive-to-evaluate approximation of the true objective function, updated sequentially as new observations are collected.
   
-   - Description of which hyperparameters you have and how you chose to optimise them 
-     Hyperparameters tuned were largely learning rate, n_estimators, etc. (to be completed more fully in final write up)
+  
+## HYPERPARAMETER OPTIMSATION
+        
+         Hyperparameter Tuning Strategy
+         
+         For simpler functions with less dimensions I chose to focus on tunung these two hyperparametets
+         
+           n_estimators": (50, 400),             # Integer
+           learning_rate": (0.01, 0.30),         # Float
+    
+         and for higher dimensional functions, I explored tuning the first three of the following hyperparameters at most after each weekly iteration
+         
+           max_depth": (1, 10),                   # Integer
+           subsample": (0.5, 1.0),                # Float
+           min_samples_leaf": (1, 20),            # Integer
+           max_features": (0.0, 1.0),             # Categorical, mapped from float (0.0=sqrt, 1.0=log2)
+           min_samples_split": (2, 20),           # Integer
+           min_weight_fraction_leaf": (0.0, 0.5)  # Float
+         
 
 ## RESULTS (To be completed in final write up)
 A summary of your results and what you can learn from your model 
