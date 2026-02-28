@@ -19,7 +19,7 @@ This project uses synthetic benchmarks to study the behaviour of the BO loop in 
   Datasheet.md
 
 ## MODEL 
-   [Model Card](./MODEL_CARD.md)
+   ./model_card.md
  
 
 ## KEY CONCEPTS
