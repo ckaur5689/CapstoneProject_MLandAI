@@ -30,7 +30,7 @@ Formally, the GP is defined as: f(x) ~ GP(μ(x), k(x, x')), where μ(x) is the p
   2.3 Upper Confidence Bound (UCB) Acquisition Function
 The Upper Confidence Bound acquisition function selects the next evaluation point by maximising a weighted combination of the GP predictive mean and predictive standard deviation:
 
-                                                  **UCB(x) = μ(x) + κ · σ(x)**
+                                                   UCB(x) = μ(x) + κ · σ(x)
 where μ(x) is the posterior predictive mean, σ(x) is the posterior predictive standard deviation, and κ ≥ 0 is a hyperparameter controlling the exploration–exploitation trade-off. A higher κ encourages broader exploration of uncertain regions, while a lower κ promotes exploitation of areas with high predicted values. The UCB formulation provides theoretical regret bounds under certain regularity conditions, making it a principled and well-studied acquisition strategy.
 
  # 3. Model Configuration
