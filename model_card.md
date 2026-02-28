@@ -3,12 +3,13 @@
 # 1. Model Overview
 This model card describes the methodology, configuration, and performance of eight Gaussian Process (GP) surrogate models constructed via Bayesian Optimisation (BO) to approximate and find the global maximum of eight distinct synthetic black-box objective functions. The Upper Confidence Bound (UCB) acquisition function was used throughout to balance exploration and exploitation during the sequential search process.
 
-    Model Type: Gaussian Process (GP) Surrogate Model
-    Framework:	Bayesian Optimisation (BO)
-    Acquisition Function: Upper Confidence Bound (UCB)
-    Number of Surrogate Models: 8
-    Objective: Global Maximum Discovery
-    Target Functions: Synthetic Black-Box Functions (×8)
+                                   |Property|                   |   |Detail|
+                                    Model Type:                 |    Gaussian Process (GP) Surrogate Model
+                                    Framework:	                |    Bayesian Optimisation (BO)
+                                    Acquisition Function:       |    Upper Confidence Bound (UCB)
+                                    Number of Surrogate Models: |    8
+                                    Objective:                  |    Global Maximum Discovery
+                                    Target Functions:           |    Synthetic Black-Box Functions (×8)
 
  # 2. Methodology
 - 2.1 Bayesian Optimisation Framework
