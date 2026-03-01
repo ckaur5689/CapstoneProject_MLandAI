@@ -25,7 +25,15 @@ A capstone project exploring the use of Bayesian Optimisation (BO) with Gaussian
          Weeks 1-2:  Submissions were largely based on manual reasoning (using scatter plots where feasible) or own insight to pick the next best point to either explore the space of the function in particular where the initial data provided showed a gap in observations in a particular region  
          Weeks 3-6:  Bayesian optimisation using a GP and using UCB (kappa) as the acquisition function was largely used to pick the next best candidate predominately using a higher kappa for exploring the search space or a lower kappa for exploiting
          Weeks 7-10: Where it appeared that the surrogate model was no longer learning or no real imprrovement to the objective function, other parameters controlling the BO intial set up such as N_INI and N_INTER were explored and hypperameters such as the learning rate and n_estimators were tuned accordingly. 
-   
+
+## GitHub structure
+
+.
+├── notebooks/          # Jupyter notebooks for each function experiment
+├── data_sheet/         # explanation of the data for each function
+├── model_card.md       # Model card detailing methodology and results
+├── results/            # Saved outputs, plots, and metrics
+└── README.md
 
 ## DATA
  [data_sheet](https://github.com/ckaur5689/CapstoneProject_MLandAI/blob/main/data_sheet.md)
@@ -41,7 +49,6 @@ A capstone project exploring the use of Bayesian Optimisation (BO) with Gaussian
     Upper Confidence Bound (UCB) — An acquisition function that scores candidate points by their predicted mean plus a scaled uncertainty term. The scaling factor κ\kappa controls how much the search prioritises unexplored regions versus high-predicted-value regions.
 
     Surrogate Model — An inexpensive-to-evaluate approximation of the true objective function, updated sequentially as new observations are collected.
-  
   
 ## HYPERPARAMETER OPTIMSATION
         
