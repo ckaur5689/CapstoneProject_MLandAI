@@ -3,6 +3,7 @@
 
 ## NON-TECHNICAL EXPLANATION OF YOUR PROJECT
 Bayesian Optimisation with Gaussian Process Surrogate Models
+
 A capstone project exploring the use of Bayesian Optimisation (BO) with Gaussian Process (GP) surrogate models and the Upper Confidence Bound (UCB) acquisition function to efficiently locate the global maximum of synthetic black-box functions.
 
    - Project Description
