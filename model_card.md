@@ -50,13 +50,13 @@ Each of the eight GP surrogate models was configured with a kernel and hyperpara
  - 3.2 Synthetic Black-Box Functions
 Eight synthetic benchmark functions were used as the black-box objectives. These functions are designed to test different challenges in global optimisation, including multimodality, varying curvature, and flat regions. A separate GP surrogate model was trained and optimised independently for each function.
 
-**Function 1:**
-- Description of sample application: Detect likely contamination sources in a two-dimensional area, such as a radiation field, where only proximity yields a non-zero reading. The system uses Bayesian optimisation to tune detection parameters and reliably identify both strong and weak sources.
+    **Function 1:**
+    - Description of sample application: Detect likely contamination sources in a two-dimensional area, such as a radiation field, where only proximity yields a non-zero reading. The system uses Bayesian optimisation to   tune detection parameters and reliably identify both strong and weak sources.
   - Initial input data (x) provided:  2D array (10,2)
   - Initial output data (y) provided: 1D array (10,)  
 
-**Function 2:**
-- Description of sample application: Imagine a black box, or a mystery ML model, that takes two numbers as input and returns a log-likelihood score. Your goal is to maximise that score, but each output is noisy, and depending on where you start, you might get stuck in a local optimum. To tackle this, you use Bayesian optimisation, which selects the next inputs based on what it has learned so far. It balances exploration with exploitation, making it well suited to noisy outputs and complex functions with many local peaks.
+    **Function 2:**
+    - Description of sample application: Imagine a black box, or a mystery ML model, that takes two numbers as input and returns a log-likelihood score. Your goal is to maximise that score, but each output is noisy, and depending on where you start, you might get stuck in a local optimum. To tackle this, you use Bayesian optimisation, which selects the next inputs based on what it has learned so far. It balances exploration with exploitation, making it well suited to noisy outputs and complex functions with many local peaks.
   - Initial input data (x) provided:  2D array (10,2)
   - Initial output data (y) provided: 1D array (10,)  
 
