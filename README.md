@@ -30,15 +30,17 @@ A capstone project exploring the use of Bayesian Optimisation (BO) with Gaussian
 ## GitHub structure
 
         .
-         ├── notebooks/          # Jupyter notebooks for each function experiment
-   
+         ├── notebooks/          # Jupyter notebooks for each function experiment and results
+         
+         ├── README.md           # Purpose of this project
+         
          ├── data_sheet/         # explanation of the data for each function
    
-         ├── model_card.md       # Model card detailing methodology and results
+         ├── image.png           # Model card detailing methodology and results
    
-         ├── results/            # Saved outputs, plots, and metrics
+         └── model_card.md       # Model card detailing methodology and results
    
-         └── README.md
+         
 
 ## DATA
  [data_sheet](https://github.com/ckaur5689/CapstoneProject_MLandAI/blob/main/data_sheet.md)
