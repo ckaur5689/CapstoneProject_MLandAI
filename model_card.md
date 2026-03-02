@@ -105,7 +105,7 @@ Each surrogate model was initialised with a set of quasi-random initial observat
  - 4.2 Performance Metrics
 The following metrics were used to assess the quality and efficiency of each surrogate model and the overall BO procedure:
 
-                     -Metric-	                       |  -Description -
+                     -Metric-	                      |  -Description -
                      Best Observed Value             |  Highest objective function value f(x*) found during the BO run
                      Convergence Iteration           |  Iteration at which the best observed value first came within a threshold of the global maximum
                      Root Mean Square                |  Measure of surrogate model fit quality at each iteration for function 1,3-8
