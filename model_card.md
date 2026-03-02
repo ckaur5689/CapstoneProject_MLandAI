@@ -16,21 +16,24 @@ This model card describes the methodology, configuration, and performance of eig
 Bayesian Optimisation is a sequential, model-based strategy for optimising expensive or unknown black-box functions. Rather than evaluating the objective function exhaustively, BO maintains a probabilistic surrogate model that is updated with each new observation. The surrogate model provides both a predictive mean and uncertainty estimate at any queried point, which together guide the selection of the next evaluation location.
 
 The BO loop follows the following iterative procedure:
-•	Initialise the GP prior using a small set of random initial observations.
-•	Fit the GP surrogate model to all available observations.
-•	Optimise the UCB acquisition function to propose the next candidate point.
-•	Evaluate the black-box function at the proposed candidate.
-•	Update the GP with the new observation and repeat until the evaluation budget is exhausted.
+
+    •	Initialise the GP prior using a small set of random initial observations.
+    •	Fit the GP surrogate model to all available observations.
+    •	Optimise the UCB acquisition function to propose the next candidate point.
+    •	Evaluate the black-box function at the proposed candidate.
+    •	Update the GP with the new observation and repeat until the evaluation budget is exhausted.
 
 - 2.2 Gaussian Process Surrogate Model
 A Gaussian Process defines a distribution over functions and is fully specified by a mean function and a covariance (kernel) function. Given a set of observations, the GP posterior provides a tractable, closed-form predictive distribution over the function value at any unobserved location. This makes GPs particularly well-suited as surrogate models in BO, as their uncertainty estimates directly inform the acquisition function.
 
-Formally, the GP is defined as: f(x) ~ GP(μ(x), k(x, x')), where μ(x) is the prior mean function (typically zero) and k(x, x') is the kernel function encoding assumptions about the smoothness and structure of the objective function.
+Formally, the GP is defined as:
+    f(x) ~ GP(μ(x), k(x, x')), where μ(x) is the prior mean function (typically zero) and k(x, x') is the kernel function encoding assumptions about the smoothness and structure of the objective function.
 
   2.3 Upper Confidence Bound (UCB) Acquisition Function
 The Upper Confidence Bound acquisition function selects the next evaluation point by maximising a weighted combination of the GP predictive mean and predictive standard deviation:
 
                                                    UCB(x) = μ(x) + κ · σ(x)
+                                                   
 where μ(x) is the posterior predictive mean, σ(x) is the posterior predictive standard deviation, and κ ≥ 0 is a hyperparameter controlling the exploration–exploitation trade-off. A higher κ encourages broader exploration of uncertain regions, while a lower κ promotes exploitation of areas with high predicted values. The UCB formulation provides theoretical regret bounds under certain regularity conditions, making it a principled and well-studied acquisition strategy.
 
  # 3. Model Configuration
@@ -48,7 +51,8 @@ Each of the eight GP surrogate models was configured with a kernel and hyperpara
                                 Total BO Iterations          |       Defined per experimental setup
 
  - 3.2 Synthetic Black-Box Functions
-Eight synthetic benchmark functions were used as the black-box objectives. These functions are designed to test different challenges in global optimisation, including multimodality, varying curvature, and flat regions. A separate GP surrogate model was trained and optimised independently for each function.
+
+##Eight## synthetic benchmark functions were used as the black-box objectives. These functions are designed to test different challenges in global optimisation, including multimodality, varying curvature, and flat regions. A separate GP surrogate model was trained and optimised independently for each function.
 
 **Function 1:**
     - Description of sample application: Detect likely contamination sources in a two-dimensional area, such as a radiation field, where only proximity yields a non-zero reading. The system uses Bayesian optimisation to   tune detection parameters and reliably identify both strong and weak sources.
