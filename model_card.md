@@ -52,7 +52,7 @@ Each of the eight GP surrogate models was configured with a kernel and hyperpara
 
  - 3.2 Synthetic Black-Box Functions
 
-##Eight## synthetic benchmark functions were used as the black-box objectives. These functions are designed to test different challenges in global optimisation, including multimodality, varying curvature, and flat regions. A separate GP surrogate model was trained and optimised independently for each function.
+Eight synthetic functions were used as the black-box objectives. These functions are designed to test different challenges in global optimisation, including multimodality, varying curvature, and flat regions. A separate GP surrogate model was trained and optimised independently for each function.
 
 **Function 1:**
     - Description of sample application: Detect likely contamination sources in a two-dimensional area, such as a radiation field, where only proximity yields a non-zero reading. The system uses Bayesian optimisation to   tune detection parameters and reliably identify both strong and weak sources.
