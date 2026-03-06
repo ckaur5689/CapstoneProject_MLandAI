@@ -61,7 +61,7 @@ A capstone project exploring the use of Bayesian Optimisation (BO) with Gaussian
         
          Hyperparameter Tuning Strategy
          
-         For simpler functions with less dimensions I chose to focus on tunung these two hyperparametets
+         For simpler functions with less dimensions I chose to focus on tunung these two hyperparameters but then in week 12 I added min_samples_leaf to promote learning
          
            n_estimators": (50, 400),             # Integer
            learning_rate": (0.01, 0.30),         # Float
