@@ -68,7 +68,7 @@ A capstone project exploring the use of Bayesian Optimisation (BO) with Gaussian
            max_depth": (1, 10),                  # Integer
            subsample": (0.5, 1.0),               # Float
     
-         and for higher dimensional functions, I explored tuning the first three of the following hyperparameters at most after each weekly iteration
+         and for higher dimensional functions, I explored tuning the first three of the following hyperparameters at most after each weekly iteration and then adding further hyperparameters for improved learning
          
            max_depth": (1, 10),                   # Integer
            subsample": (0.5, 1.0),                # Float
@@ -78,12 +78,11 @@ A capstone project exploring the use of Bayesian Optimisation (BO) with Gaussian
            min_weight_fraction_leaf": (0.0, 0.5)  # Float
          
 
-## RESULTS (To be completed in final write up)
-A summary of your results and what you can learn from your model 
+## RESULTS
+A summary of results for each function is within the 8 notebooks at the end.
 
-You can include images of plots using the code below:
 ![Screenshot](image.png)
 
 ## (OPTIONAL: CONTACT DETAILS)
-If you are planning on making your github repo public you may wish to include some contact information such as a link to your twitter or an email address. 
+Contact on LinkedIn for more information 
 
