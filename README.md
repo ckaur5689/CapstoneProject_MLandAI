@@ -83,6 +83,6 @@ A summary of results for each function is within the 8 notebooks at the end.
 
 ![Screenshot](image.png)
 
-## (OPTIONAL: CONTACT DETAILS)
+## CONTACT DETAILS
 Contact on LinkedIn for more information 
 
