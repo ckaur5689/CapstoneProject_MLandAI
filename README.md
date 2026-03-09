@@ -1,4 +1,4 @@
-# PROJECT TITLE 
+# Capstone Black-Box fucnction Optimisation project
 
 
 ## NON-TECHNICAL EXPLANATION OF YOUR PROJECT
