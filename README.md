@@ -26,6 +26,7 @@ The week to week process helped to build our understanding of each black-box fun
          Weeks 1-2:  Submissions were largely based on manual reasoning (using scatter plots where feasible) or own insight to pick the next best point to either explore the space of the function in particular where the initial data provided showed a gap in observations in a particular region  
          Weeks 3-6:  Bayesian optimisation using a GP and using UCB (kappa) as the acquisition function was largely used to pick the next best candidate predominately using a higher kappa for exploring the search space or a lower kappa for exploiting
          Weeks 7-10: Where it appeared that the surrogate model was no longer learning or no real imprrovement to the objective function, other parameters controlling the BO intial set up such as N_INI and N_INTER were explored and hypperameters such as the learning rate and n_estimators were tuned accordingly. 
+         Weeks 11-13: Continued to tune hyperparamters in weeks 11-12 where needed, and increasingly smaller kappa values with week 13 using the smallest kappa from all rounds.
 
 
 ## BO Strategy Summary
