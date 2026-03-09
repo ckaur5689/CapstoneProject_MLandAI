@@ -95,7 +95,7 @@ The week to week process helped to build our understanding of each black-box fun
 
 ## RESULTS
 A summary of results for each function is within the 8 notebooks lcoated here here:
-         https://github.com/ckaur5689/CapstoneProject_MLandAI/tree/main/Notebooks
+         [Notebooks](https://github.com/ckaur5689/CapstoneProject_MLandAI/tree/main/Notebooks)
 
          
 
