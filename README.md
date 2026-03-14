@@ -108,8 +108,9 @@ The week to week process helped to build our understanding of each black-box fun
 
        **Final Results** 
        
-       Final results for each function is within the 8 notebooks lcoated here including the proposed location of the global maximum:
-         [Notebooks](https://github.com/ckaur5689/CapstoneProject_MLandAI/tree/main/Notebooks)
+       Final results for each function is within the 8 notebooks located in the Notebooks folder including the proposed location of the global maximum:
+       
+[Notebooks](https://github.com/ckaur5689/CapstoneProject_MLandAI/tree/main/Notebooks)
 
          
 
