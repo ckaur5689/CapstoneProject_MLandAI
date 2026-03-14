@@ -106,9 +106,7 @@ The week to week process helped to build our understanding of each black-box fun
          Function 8: Following an initial exploration phase in weeks 1–6, a secondary exploration phase was employed in weeks 7–9 to address a plateau, with BO parameters such as N_ITER tuned directly given that hyperparameter-vs-RMSE diagnostics indicated the ranges of each hyperparameter were appropriate. Weeks 10–13 I returned to exploitation, with kappa reduced steadily from 1.0 to 0.1 across the final submissions.
 
 
-       **Final Results** 
-       
-       Final results for each function is within the 8 notebooks located in the Notebooks folder including the proposed location of the global maximum:
+Final Results for each function is within the 8 notebooks located in the Notebooks folder including the proposed location of the global maximum:
        
 [Notebooks](https://github.com/ckaur5689/CapstoneProject_MLandAI/tree/main/Notebooks)
 
