@@ -92,9 +92,9 @@ The week to week process helped to build our understanding of each black-box fun
            min_weight_fraction_leaf": (0.0, 0.5)  # Float
          
 
-## REFLECTIONS and FINAL RESULTS
+## SUMMARY of WEEK TO WEEK STRATEGY and FINAL RESULTS
          
-         **Reflections**
+Summary of week to week strategy:
 
          Function 1: Optimisation plateaued early with negligible improvement to the objective function. From week 9, systematic fine-tuning of model parameters and hyperparameters was introduced, which yielded a marked improvement in performance.
          Function 2: RMSE was replaced with negative R² as the objective function from week 7, following a period of stagnation with no measurable gains. I also identified at this stage that the scores returned post-submission represented log-likelihood values — a measure of surrogate model fit — and that the optimisation objective was to maximise rather than minimise this quantity.
