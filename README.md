@@ -92,8 +92,22 @@ The week to week process helped to build our understanding of each black-box fun
            min_weight_fraction_leaf": (0.0, 0.5)  # Float
          
 
-## RESULTS
-A summary of results for each function is within the 8 notebooks lcoated here here:
+## REFLECTIONS and FINAL RESULTS
+         
+         **Reflections**
+
+         Function 1: Optimisation plateaued early with negligible improvement to the objective function. From week 9, systematic fine-tuning of model parameters and hyperparameters was introduced, which yielded a marked improvement in performance.
+         Function 2: RMSE was replaced with negative R² as the objective function from week 7, following a period of stagnation with no measurable gains. I also identified at this stage that the scores returned post-submission represented log-likelihood values — a measure of surrogate model fit — and that the optimisation objective was to maximise rather than minimise this quantity.
+         Function 3: Weeks 1–9 were dedicated to broad exploration to establish adequate coverage of the function's space. From week 9, the focus shifted to exploitation, with hyperparameter fine-tuning and search space refinement to drive further performance gains.
+         Function 4: Weeks 1–4 prioritised exploration, though limited improvement in the objective function prompted earlier-than-planned hyperparameter experimentation from week 7, which produced notably better results. From week 9, the strategy transitioned to week-on-week exploitation, with iterative tuning of the Bayesian optimisation (BO) parameters and search space adjustments deployed in response to diminishing returns.
+         Function 5: An explore-then-exploit strategy was applied, with weeks 1–5 dedicated to exploration and weeks 6–9 transitioning to exploitation. From week 10, the focus shifted exclusively to exploitation, with BO parameter adjustments and search space modifications introduced as needed to sustain progress.
+         Function 6: Exploration was maintained through weeks 1–6, with exploitation adopted in week 7. Upon reviewing the results, week 8 saw a deliberate shift back to aggressive exploration (kappa of 1,000) with revised hyperparameter settings to mitigate the risk of convergence to a local optimum. From week 9, the strategy reverted to exploitation for the remainder of the optimisation, with targeted search space adjustments applied whenever diminishing returns were observed.
+         Function 7: Weeks 1–6 were allocated to exploration, after which the strategy transitioned to sustained exploitation through to the final submission. Kappa was reduced incrementally from 5.0 in week 7 to 0.1 in week 13 to progressively narrow the search. Concurrently, hyperparameters were added and refined in response to plateaus in the objective function.
+         Function 8: Following an initial exploration phase in weeks 1–6, a secondary exploration phase was employed in weeks 7–9 to address a plateau, with BO parameters such as N_ITER tuned directly given that hyperparameter-vs-RMSE diagnostics indicated the ranges of each hyperparameter were appropriate. Weeks 10–13 I returned to exploitation, with kappa reduced steadily from 1.0 to 0.1 across the final submissions.
+
+
+       **Final Results**
+Final results for each function is within the 8 notebooks lcoated here including the proposed location of the global maximum:
          [Notebooks](https://github.com/ckaur5689/CapstoneProject_MLandAI/tree/main/Notebooks)
 
          
