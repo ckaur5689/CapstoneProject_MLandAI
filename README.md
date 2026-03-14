@@ -16,18 +16,6 @@ The core research question is: how effectively can a GP surrogate, guided by UCB
 Evaluating a real-world objective function — whether it's a physical experiment, a simulation, or a hyperparameter tuning run — is often costly. Bayesian Optimisation offers a way to find good solutions with far fewer evaluations than grid search or random search by building a probabilistic model of the objective and using that model to decide where to look next.
 This project uses synthetic benchmarks to study the behaviour of the BO loop in a controlled setting, enabling direct comparison between the surrogate model's predictions and the true underlying function.
 
-## Weekly strategy
-
-Following the initial data provided as descibed in the data_sheet, each student had a maximum of 13 submissions.
-Each week we submitted ONE x input array for each of the 8 synthetic functions to the Capstone Project portal for Imperial Executive Education team to process and email back the results of the correspnding y value.
-The week to week process helped to build our understanding of each black-box function (by building 8 surrogate models) and to suggest the next candidate x values for the next week's submission, with the goal of identifying the global maximum of each function.
-
-         Weeks 1-2:  Submissions were largely based on manual reasoning (using scatter plots where feasible) or own insight to pick the next best point to either explore the space of the function in particular where the initial data provided showed a gap in observations in a particular region  
-         Weeks 3-6:  Bayesian optimisation using a GP and using UCB (kappa) as the acquisition function was largely used to pick the next best candidate predominately using a higher kappa for exploring the search space or a lower kappa for exploiting
-         Weeks 7-10: Where it appeared that the surrogate model was no longer learning or no real imprrovement to the objective function, other parameters controlling the BO intial set up such as N_INI and N_INTER were explored and hypperameters such as the learning rate and n_estimators were tuned accordingly. 
-         Weeks 11-13: Continued to tune hyperparamters in weeks 11-12 where needed, and increasingly smaller kappa values with week 13 using the smallest kappa from all rounds.
-
-
 ## BO Strategy Summary
 
 1. Overview of My BBO Approach: The core objective was to maximise the output of eight hidden functions using a Bayesian optimisation framework with a Gaussian Process surrogate model. With a limited query budget across 14 rounds, the challenge was deciding where to search next using only the results of previous queries. My overall strategy followed a deliberate arc — broad exploration in the early rounds to give the surrogate model enough data to learn from, followed by increasingly focused exploitation as patterns emerged and the model became better calibrated.
@@ -92,19 +80,29 @@ The week to week process helped to build our understanding of each black-box fun
            min_weight_fraction_leaf": (0.0, 0.5)  # Float
          
 
-## SUMMARY of WEEK TO WEEK STRATEGY and FINAL RESULTS
+## Weekly Strategy
          
-Summary of week to week strategy:
+Following the initial data provided (as described in the data sheet), each student was allocated a maximum of 13 submissions. Each week, one input array x was submitted per function to the Capstone Project portal, with the Imperial Executive Education team returning the corresponding y values. This iterative process served a dual purpose: building understanding of each black-box function through the construction of 8 surrogate models, and identifying candidate x values for subsequent submissions — with the overarching goal of locating the global maximum of each function.
+The general week-by-week strategy was as follows:
 
-         Function 1: Optimisation plateaued early with negligible improvement to the objective function. From week 9, systematic fine-tuning of model parameters and hyperparameters was introduced, which yielded a marked improvement in performance.
-         Function 2: RMSE was replaced with negative R² as the objective function from week 7, following a period of stagnation with no measurable gains. I also identified at this stage that the scores returned post-submission represented log-likelihood values — a measure of surrogate model fit — and that the optimisation objective was to maximise rather than minimise this quantity.
-         Function 3: Weeks 1–9 were dedicated to broad exploration to establish adequate coverage of the function's space. From week 9, the focus shifted to exploitation, with hyperparameter fine-tuning and search space refinement to drive further performance gains.
-         Function 4: Weeks 1–4 prioritised exploration, though limited improvement in the objective function prompted earlier-than-planned hyperparameter experimentation from week 7, which produced notably better results. From week 9, the strategy transitioned to week-on-week exploitation, with iterative tuning of the Bayesian optimisation (BO) parameters and search space adjustments deployed in response to diminishing returns.
-         Function 5: An explore-then-exploit strategy was applied, with weeks 1–5 dedicated to exploration and weeks 6–9 transitioning to exploitation. From week 10, the focus shifted exclusively to exploitation, with BO parameter adjustments and search space modifications introduced as needed to sustain progress.
-         Function 6: Exploration was maintained through weeks 1–6, with exploitation adopted in week 7. Upon reviewing the results, week 8 saw a deliberate shift back to aggressive exploration (kappa of 1,000) with revised hyperparameter settings to mitigate the risk of convergence to a local optimum. From week 9, the strategy reverted to exploitation for the remainder of the optimisation, with targeted search space adjustments applied whenever diminishing returns were observed.
-         Function 7: Weeks 1–6 were allocated to exploration, after which the strategy transitioned to sustained exploitation through to the final submission. Kappa was reduced incrementally from 5.0 in week 7 to 0.1 in week 13 to progressively narrow the search. Concurrently, hyperparameters were added and refined in response to plateaus in the objective function.
-         Function 8: Following an initial exploration phase in weeks 1–6, a secondary exploration phase was employed in weeks 7–9 to address a plateau, with BO parameters such as N_ITER tuned directly given that hyperparameter-vs-RMSE diagnostics indicated the ranges of each hyperparameter were appropriate. Weeks 10–13 I returned to exploitation, with kappa reduced steadily from 1.0 to 0.1 across the final submissions.
+Weeks 1–2: Submissions were largely based on manual reasoning — using scatter plots where feasible — to identify the next best candidate point, with a focus on exploring regions where the initial data showed sparse coverage.
+Weeks 3–6: Bayesian optimisation (BO) using a Gaussian Process (GP) with Upper Confidence Bound (UCB) as the acquisition function was adopted. Kappa was used to balance exploration (higher values) and exploitation (lower values).
+Weeks 7–10: Where surrogate model learning appeared to stagnate, BO initialisation parameters such as N_INI and N_ITER were adjusted, and model hyperparameters such as learning rate and n_estimators were tuned accordingly.
+Weeks 11–13: Hyperparameter tuning continued where necessary in weeks 11–12, with progressively smaller kappa values applied throughout, reaching the minimum in the final submission.
 
+Per-Function Reflections:
+
+Function 1: Optimisation plateaued early with negligible improvement to the objective function. From week 9, systematic fine-tuning of model parameters and hyperparameters was introduced, which yielded a marked improvement in performance.
+Function 2: RMSE was replaced with negative R² as the objective function from week 7, following a period of stagnation with no measurable gains. It was also identified at this stage that the scores returned post-submission represented log-likelihood values — a measure of surrogate model fit — and that the optimisation objective was to maximise rather than minimise this quantity.
+Function 3: Weeks 1–9 were dedicated to broad exploration to establish adequate coverage of the function's space. From week 9, the focus shifted to exploitation, with hyperparameter fine-tuning and search space refinement to drive further performance gains.
+Function 4: Weeks 1–4 prioritised exploration, though limited improvement in the objective function prompted earlier-than-planned hyperparameter experimentation from week 7, which produced notably better results. From week 9, the strategy transitioned to week-on-week exploitation, with iterative tuning of BO parameters and search space adjustments deployed in response to diminishing returns.
+Function 5: An explore-then-exploit strategy was applied, with weeks 1–5 dedicated to exploration and weeks 6–9 transitioning to exploitation. From week 10, the focus shifted exclusively to exploitation, with BO parameter adjustments and search space modifications introduced as needed to sustain progress.
+Function 6: Exploration was maintained through weeks 1–6, with exploitation adopted in week 7. Upon reviewing the results, week 8 saw a deliberate shift back to aggressive exploration (kappa = 1,000) with revised hyperparameter settings to mitigate the risk of convergence to a local optimum. From week 9, the strategy reverted to exploitation for the remainder of the optimisation, with targeted search space adjustments applied whenever diminishing returns were observed.
+Function 7: Weeks 1–6 were allocated to exploration, after which the strategy transitioned to sustained exploitation through to the final submission. Kappa was reduced incrementally from 5.0 in week 7 to 0.1 in week 13 to progressively narrow the search. Concurrently, hyperparameters were added and refined in response to plateaus in the objective function.
+Function 8: Following an initial exploration phase in weeks 1–6, a secondary exploration phase was employed in weeks 7–9 to address a plateau, with BO parameters such as N_ITER tuned directly given that hyperparameter-vs-RMSE diagnostics indicated the ranges of each hyperparameter were appropriate. Weeks 10–13 returned to exploitation, with kappa reduced steadily from 1.0 to 0.1 across the final submissions.
+
+
+## FINAL RESULTS
 
 The final surrogate model results for each of the 8 functions — including the proposed location of the global maximum — are documented within their respective notebooks.
        
